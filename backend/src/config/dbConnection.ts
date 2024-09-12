@@ -1,23 +1,13 @@
-import mongoose from "mongoose";
+import { config } from "dotenv";
+import db from "mongoose";
+config();
+const dburi = `mongodb://${process.env.host}:${process.env.port}/${process.env.db}`;
+db.connect(dburi)
+  .then(() => {
+    console.log("Connected to DB");
+  })
+  .catch(() => {
+    console.log("Error Connecting to Db");
+  });
 
-(async () => {
-  try {
-    await mongoose.connect("mongodb://localhost:27017/programmingpartner");
-  } catch (error) {
-    console.error("Error while connecting to DB:", error);
-  }
-})();
-
-mongoose.connection.on("connected", () => {
-  console.log("Connected to DB");
-});
-
-mongoose.connection.on("error", (err) => {
-  console.error("Error while connecting to DB:", err);
-});
-
-mongoose.connection.on("disconnected", () => {
-  console.log("DB Disconnected");
-});
-
-export default mongoose;
+export default db;
