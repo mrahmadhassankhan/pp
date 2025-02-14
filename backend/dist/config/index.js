@@ -3,12 +3,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const dotenv_1 = require("dotenv");
-const app_1 = require("../app");
-const dbConnection_1 = __importDefault(require("./dbConnection"));
-(0, dotenv_1.config)();
-const PORT = process.env.PORT;
-app_1.app.listen(PORT, () => {
-    console.log(`Server is listening on PORT ${PORT}`);
+const express_1 = __importDefault(require("express"));
+const db_1 = __importDefault(require("./db"));
+const app = (0, express_1.default)();
+db_1.default;
+const PORT = process.env.PORT || 3000;
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: true }));
+app.get("/", (req, res) => {
+    res.send("Welcome to Programming Parnter.com");
 });
-dbConnection_1.default;
+app.listen(PORT, () => {
+    console.log(`Server is listening on Port ${PORT}`);
+});
+exports.default = app;
