@@ -24,7 +24,10 @@ app.use(authRouter);
 app.get("/", (req: Request, res: Response) => {
   console.log("User authentication status:", req.isAuthenticated());
   if (req.isAuthenticated()) {
-    res.send(`Welcome, ${req.user.displayName}`);
+    // res.send(`Welcome, ${req.user.displayName}`);
+    res.send(
+      `<html><body><form action="/logout" method="post"><button>Logout</button></form></body></html>`
+    );
   } else {
     res.redirect("http://localhost:3000/auth/google");
   }
