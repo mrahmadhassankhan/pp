@@ -3,7 +3,6 @@ export default function Footer() {
     <footer className="bg-secondary text-highlight border-t border-gray-600 shadow-md bottom-0 w-full">
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid grid-cols-2 gap-8 px-6 py-8 lg:py-10 md:grid-cols-4 text-highlight bg-secondary rounded-t-lg">
-          {/* Branding Section */}
           <div>
             <h2 className="mb-4 text-sm font-semibold uppercase">
               Programming Partner
@@ -13,7 +12,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
           <nav aria-label="Company Info">
             <h2 className="mb-4 text-sm font-semibold uppercase">Company</h2>
             <ul className="space-y-2 text-sm">
@@ -35,7 +33,6 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Help Center */}
           <nav aria-label="Help Center">
             <h2 className="mb-4 text-sm font-semibold uppercase">Support</h2>
             <ul className="space-y-2 text-sm">
@@ -57,7 +54,6 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Legal */}
           <nav aria-label="Legal">
             <h2 className="mb-4 text-sm font-semibold uppercase">Legal</h2>
             <ul className="space-y-2 text-sm">
@@ -80,7 +76,6 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* Bottom Footer */}
         <div className="px-6 py-4 flex flex-col md:flex-row items-center justify-between border-t border-gray-600">
           <span className="text-sm sm:text-center">
             © 2025{" "}

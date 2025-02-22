@@ -1,5 +1,8 @@
+import Features from "~/components/Features/features";
 import type { Route } from "./+types/home";
 import Hero from "~/components/Hero/hero";
+import HowItWorks from "~/components/HowItWorks/howItWorks";
+import Faqs from "~/components/Faqs/faqs";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -13,6 +16,9 @@ export default function Home() {
     <>
       <div className="min-h-screen bg-primary">
         <Hero />
+        <Features />
+        <HowItWorks />
+        <Faqs />
       </div>
     </>
   );
