@@ -2,7 +2,9 @@ import Features from "~/components/Features/features";
 import type { Route } from "./+types/home";
 import Hero from "~/components/Hero/hero";
 import HowItWorks from "~/components/HowItWorks/howItWorks";
-import Faqs from "~/components/Faqs/faqs";
+import Faqs from "~/routes/Faqs/faqs";
+import Reviews from "~/components/Reviews/reviews";
+import CookieConsent from "~/components/cookieConsent/cookieConsent";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -18,7 +20,9 @@ export default function Home() {
         <Hero />
         <Features />
         <HowItWorks />
+        <Reviews />
         <Faqs />
+        <CookieConsent />
       </div>
     </>
   );
